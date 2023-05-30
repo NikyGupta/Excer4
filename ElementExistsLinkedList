@@ -1,0 +1,27 @@
+package com.accenture;
+import java.util.LinkedList;
+public class ElementExistsLinkedList {
+	public static void main(String[] args) {
+        // Create the LinkedList
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.add(10);
+        linkedList.add(5);
+        linkedList.add(15);
+        linkedList.add(8);
+        linkedList.add(20);
+
+        // Element to check for existence
+        int elementToCheck = 15;
+
+        // Check if the element exists using Stream API
+        boolean exists = linkedList.stream()
+                .anyMatch(element -> element == elementToCheck);
+
+        // Print the result
+        if (exists) {
+            System.out.println("The element " + elementToCheck + " exists in the LinkedList.");
+        } else {
+            System.out.println("The element " + elementToCheck + " does not exist in the LinkedList.");
+        }
+    }
+}
