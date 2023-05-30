@@ -1,0 +1,24 @@
+package com.accenture;
+import java.util.Comparator;
+import java.util.LinkedList;
+
+public class SortLinkedList {
+	public static void main(String[] args) {
+        // Create the LinkedList
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        linkedList.add(10);
+        linkedList.add(5);
+        linkedList.add(15);
+        linkedList.add(8);
+        linkedList.add(20);
+
+        // Sort the LinkedList in descending order using Stream API
+        LinkedList<Integer> sortedLinkedList = linkedList.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(LinkedList::new, LinkedList::add, LinkedList::addAll);
+
+        // Print the result
+        System.out.println("Original LinkedList: " + linkedList);
+        System.out.println("Sorted LinkedList (Descending Order): " + sortedLinkedList);
+    }
+}
