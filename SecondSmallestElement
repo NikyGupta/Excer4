@@ -1,0 +1,28 @@
+package com.accenture;
+import java.util.TreeSet;
+
+public class SecondSmallestElement {
+	public static void main(String[] args) {
+        // Create the TreeSet with elements
+        TreeSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(10);
+        treeSet.add(5);
+        treeSet.add(15);
+        treeSet.add(8);
+        treeSet.add(20);
+
+        // Find the second smallest element using Stream API
+        Integer secondSmallest = treeSet.stream()
+                .skip(1)
+                .findFirst()
+                .orElse(null);
+
+        // Print the result
+        if (secondSmallest != null) {
+            System.out.println("Second smallest element: " + secondSmallest);
+        } else {
+            System.out.println("There is no second smallest element.");
+        }
+    }
+}
+
