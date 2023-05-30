@@ -1,0 +1,27 @@
+package com.accenture;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class IntersectionHashSet {
+	public static void main(String[] args) {
+        // Create the first HashSet
+        Set<Integer> set1 = new HashSet<>();
+        set1.add(1);
+        set1.add(2);
+        set1.add(3);
+
+        // Create the second HashSet
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(3);
+        set2.add(4);
+        set2.add(5);
+
+        // Find the intersection using Stream API
+        Set<Integer> intersection = set1.stream().filter(set2::contains).collect(Collectors.toSet());
+
+        // Print the result
+        System.out.println("Intersection: " + intersection);
+    }
+}
+
