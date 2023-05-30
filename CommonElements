@@ -1,0 +1,30 @@
+package com.accenture;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+public class CommonElements {
+	public static void main(String[] args) {
+        // Create the first ArrayList
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+
+        // Create the second ArrayList
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(3);
+        list2.add(4);
+        list2.add(5);
+
+        // Check if there are any common elements using Stream API
+        boolean hasCommonElements = list2.stream().anyMatch(new HashSet<>(list1)::contains);
+
+        // Print the result
+        if (hasCommonElements) {
+            System.out.println("The two ArrayLists have common elements.");
+        } else {
+            System.out.println("The two ArrayLists do not have any common elements.");
+        }
+    }
+}
