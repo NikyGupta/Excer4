@@ -1,0 +1,30 @@
+package com.accenture;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class ElementCount {
+	public static void main(String[] args) {
+        // Create the ArrayList with elements
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        list.add("apple");
+        list.add("orange");
+        list.add("banana");
+        list.add("apple");
+
+        // Count the occurrence of each element using Stream API
+        Map<String, Integer> elementCount = new HashMap<>();
+        for (String element : list) {
+            elementCount.put(element, elementCount.getOrDefault(element, 0) + 1);
+        }
+
+        // Print the result
+        for (Map.Entry<String, Integer> entry : elementCount.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
