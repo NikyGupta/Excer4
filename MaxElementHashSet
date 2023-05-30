@@ -1,0 +1,26 @@
+package com.accenture;
+import java.util.HashSet;
+
+public class MaxElementHashSet {
+	 public static void main(String[] args) {
+	        // Create the HashSet with elements
+	        HashSet<Integer> set = new HashSet<>();
+	        set.add(10);
+	        set.add(5);
+	        set.add(15);
+	        set.add(8);
+	        set.add(20);
+
+	        // Find the maximum element using Stream API
+	        Integer maxElement = set.stream()
+	                .max(Integer::compareTo)
+	                .orElse(null);
+
+	        // Print the result
+	        if (maxElement != null) {
+	            System.out.println("Maximum element: " + maxElement);
+	        } else {
+	            System.out.println("The set is empty.");
+	        }
+	    }
+}
